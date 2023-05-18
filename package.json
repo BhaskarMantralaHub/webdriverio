@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "yaml": "^2.2.2",
+    "@types/app-root-path": "^1.2.4",
     "@wdio/cli": "^8.10.2",
     "@wdio/local-runner": "^8.10.2",
     "@wdio/mocha-framework": "^8.10.2",
