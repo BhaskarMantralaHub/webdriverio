@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "dotenv": "^16.0.3",
     "yaml": "^2.2.2",
     "@types/app-root-path": "^1.2.4",
     "@wdio/cli": "^8.10.2",
