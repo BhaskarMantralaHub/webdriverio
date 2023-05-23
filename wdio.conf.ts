@@ -1,4 +1,7 @@
 import type { Options } from '@wdio/types'
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export const config: Options.Testrunner = {
     //
@@ -33,7 +36,8 @@ export const config: Options.Testrunner = {
     // will be called from there.
     //
     specs: [
-        'e2e/test.spec.ts'
+        `e2e/**/${process.env.SPEC}`
+        // ['e2e/test.spec.ts', 'e2e/test1.spec.ts']
     ],
     // Patterns to exclude.
     exclude: [
@@ -214,8 +218,9 @@ export const config: Options.Testrunner = {
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
-    // beforeTest: function (test, context) {
-    // },
+    beforeTest: function (test, context) {
+        context.data = "Hello World! Global Data....";
+    },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
