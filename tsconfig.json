@@ -36,9 +36,7 @@
        "node",
        "webdriverio",
        "@wdio/globals/types",
-       "webdriverio/async",
        "@wdio/mocha-framework",
-       "wdio-intercept-service",
        "expect-webdriverio"
      ],                                      /* Specify type package names to be included without being referenced in a source file. */
     // "allowUmdGlobalAccess": true,                     /* Allow accessing UMD globals from modules. */
