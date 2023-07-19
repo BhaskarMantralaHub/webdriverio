@@ -1,9 +1,12 @@
-import type { Options } from '@wdio/types'
-import dotenv from "dotenv";
-
-dotenv.config();
-
-export const config: Options.Testrunner = {
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.config = void 0;
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
+exports.config = {
     //
     // ====================
     // Runner Configuration
@@ -13,12 +16,10 @@ export const config: Options.Testrunner = {
     autoCompileOpts: {
         autoCompile: true,
         tsNodeOpts: {
-            project: './tsconfig.json',
+            project: './tsconfig.e2e.json',
             transpileOnly: true
         }
     },
-    
-    
     //
     // ==================
     // Specify Test Files
@@ -41,7 +42,7 @@ export const config: Options.Testrunner = {
     ],
     // Patterns to exclude.
     exclude: [
-        // 'path/to/excluded/files'
+    // 'path/to/excluded/files'
     ],
     //
     // ============
@@ -66,9 +67,9 @@ export const config: Options.Testrunner = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        // capabilities for local browser web tests
-        browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
-    }],
+            // capabilities for local browser web tests
+            browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
+        }],
     //
     // ===================
     // Test Configurations
@@ -117,7 +118,6 @@ export const config: Options.Testrunner = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     services: ['chromedriver'],
-    
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks
@@ -139,8 +139,6 @@ export const config: Options.Testrunner = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: ['spec'],
-
-    
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -245,8 +243,6 @@ export const config: Options.Testrunner = {
      */
     // afterTest: function(test, context, { error, result, duration, passed, retries }) {
     // },
-
-
     /**
      * Hook that gets executed after the suite has ended
      * @param {object} suite suite details
@@ -296,4 +292,4 @@ export const config: Options.Testrunner = {
     */
     // onReload: function(oldSessionId, newSessionId) {
     // }
-}
+};
